@@ -1,0 +1,29 @@
+.today-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.today-header {
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+  }
+}
+
+.today-date {
+  color: #7f8c8d;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.today-content {
+  background: #ecf0f1;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  color: #7f8c8d;
+}
