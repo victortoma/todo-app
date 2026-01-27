@@ -1,4 +1,4 @@
-import "./Month.scss";
+import PeriodPage from "../PeriodPage";
 
 export default function Month() {
   const now = new Date();
@@ -8,14 +8,10 @@ export default function Month() {
   });
 
   return (
-    <div className="month-container">
-      <div className="month-header">
-        <h1>This Month's Tasks</h1>
-        <p className="month-date">{monthName}</p>
-      </div>
-      <div className="month-content">
-        <p>No tasks scheduled for this month yet. Start planning!</p>
-      </div>
-    </div>
+    <PeriodPage
+      period="month"
+      title="This Month's Tasks"
+      dateText={monthName}
+    />
   );
 }

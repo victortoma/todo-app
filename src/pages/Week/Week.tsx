@@ -1,4 +1,4 @@
-import "./Week.scss";
+import PeriodPage from "../PeriodPage";
 
 export default function Week() {
   const startOfWeek = new Date();
@@ -8,25 +8,18 @@ export default function Week() {
   const endOfWeek = new Date(startOfWeek);
   endOfWeek.setDate(endOfWeek.getDate() + 6);
 
+  const weekDate =
+    startOfWeek.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+    }) +
+    " - " +
+    endOfWeek.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+    });
+
   return (
-    <div className="week-container">
-      <div className="week-header">
-        <h1>This Week's Tasks</h1>
-        <p className="week-date">
-          {startOfWeek.toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-          })}{" "}
-          -{" "}
-          {endOfWeek.toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-          })}
-        </p>
-      </div>
-      <div className="week-content">
-        <p>No tasks scheduled for this week yet. Get organized and add some!</p>
-      </div>
-    </div>
+    <PeriodPage period="week" title="This Week's Tasks" dateText={weekDate} />
   );
 }
