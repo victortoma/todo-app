@@ -8,6 +8,7 @@ import Today from "./pages/Today/Today";
 import Tomorrow from "./pages/Tomorrow/Tomorrow";
 import Week from "./pages/Week/Week";
 import Month from "./pages/Month/Month";
+import { TaskProvider } from "./context/TaskContext";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <TaskProvider>
+      <RouterProvider router={router} />
+    </TaskProvider>
   </StrictMode>,
 );
